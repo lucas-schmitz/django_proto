@@ -14,7 +14,7 @@ if __name__ == '__main__':
         )
     # added by Lucas S.
     # automatically open the address in firefox
-    if sys.argv[1] == "runserver":
-        os.system("firefox http://127.0.0.1:8000/")
+    # if sys.argv[1] == "runserver":
+    #     os.system("firefox http://127.0.0.1:8000/")
     execute_from_command_line(sys.argv)
 
