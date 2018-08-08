@@ -24,10 +24,10 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
-            <li><a href="registration/logout">Logout</a></li>
+            <li><a href="/registration/logout">Logout</a></li>
             {% else %}
-            <li><a href="registration/login">Login</a></li>
-            <li><a href="registration/register">register</a></li>
+            <li><a href="/registration/login">Login</a></li>
+            <li><a href="/registration/register">register</a></li>
             {% endif %}
           </ul>
         </div><!-- /.navbar-collapse -->

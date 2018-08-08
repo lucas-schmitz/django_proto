@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^registration/login/$', LoginView.as_view(), {'template_name': 'registration/login.html'}),
     url(r'^registration/logout/$', LogoutView.as_view()),
     url(r'^registration/register/$', views.register, name='register'),
-    url("", include("homepage.urls")),
+    url(r'', include("homepage.urls")),
+    url(r'', include("accounts.urls"))
 ]
 
