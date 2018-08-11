@@ -1,8 +1,11 @@
 <html>
-    <head>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
-    </head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+    {% block head %}
+    <header>
+        <title>NavBar</title>
+    </header>
+    {% endblock %}
     <body>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
