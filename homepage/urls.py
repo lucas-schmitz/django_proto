@@ -1,6 +1,9 @@
 from django.conf.urls import url
 from . import views
 
+app_name = "homepage"
+
 urlpatterns = [
-    url(r'^$', views.home)
+    url(r'^$', views.home, name="home")
 ]
+

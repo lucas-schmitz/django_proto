@@ -1,0 +1,1 @@
+default_app_config = 'bokeh_server.apps.BokehServerConfig'

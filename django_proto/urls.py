@@ -18,7 +18,8 @@ from django.conf.urls import url
 from django.urls import path, include
 from django.contrib.auth.views import LoginView, LogoutView
 from . import views
-
+from . import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,9 @@ urlpatterns = [
     url(r'^registration/logout/$', LogoutView.as_view()),
     url(r'^registration/register/$', views.register, name='register'),
     url(r'', include("homepage.urls")),
-    url(r'', include("accounts.urls"))
+    url(r'', include("accounts.urls")),
+    url(r'', include("bokeh_plots.urls"))
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

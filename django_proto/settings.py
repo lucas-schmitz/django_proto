@@ -22,6 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '$!#&$-z6i5v6r=_bdg(aklstjngybxl*6ui@n7x7eizafij93n'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homepage',
     'django_proto',
-    'bootstrap3',
+    'homepage',
+    'bokeh_plots',
     'accounts',
+    'bokeh_server'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,3 +128,21 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/accounts/profile'
 LOGOUT_REDIRECT_URL = '/'  # redirect logout to the homepage
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# TODO: integrate proper error message
+# local address for Bokeh and Django
+if DEBUG:
+    BOKEH_SERVER_PROTOCOL = "http"
+    BOKEH_SERVER_IP = "localhost"
+    BOKEH_SERVER_PORT = "5006"
+    DJANGO_SERVER_PROTOCOL = "http"
+    DJANGO_SERVER_IP = "127.0.0.1"
+    DJANGO_SERVER_PORT = "8000"
+else:
+    raise FileNotFoundError("Debug mode is off. "
+                            "Check if the Bokeh & Django server paths are correct")
+
+BOKEH_BIN = "/home/lucas/anaconda3/envs/Python3DjangoBokeh/bin/bokeh"
