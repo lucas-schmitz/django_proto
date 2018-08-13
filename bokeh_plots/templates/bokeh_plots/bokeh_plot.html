@@ -1,0 +1,10 @@
+{% extends 'navbar.html' %}
+{% block head %}
+<header>
+    <title>{{ name }}</title>
+</header>
+{% endblock %}
+{% block body %}
+    <p>plot name: {{ name }}</p>
+    {{server_script|safe}}
+{% endblock %}

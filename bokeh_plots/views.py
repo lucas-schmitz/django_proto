@@ -6,6 +6,7 @@ from bokeh_server.apps import BokehServerConfig
 from bokeh.embed import server_session, server_document
 from bokeh.util import session_id
 
+
 # Create your views here.
 def home(request):
     bokeh_plots = models.Bokeh.objects.all()
